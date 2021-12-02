@@ -19,25 +19,24 @@ radio.on()
 radio.config(group=1)
 
 mode = "A"
+display.show(mode)
 
 def transition(val):
     #Make the 'mode' variable accessible
     global mode
 
-    counter = 0
-
     radio.send(val)
 
     #Give the Motor:bit some time to reply
-    while counter < 10:
+    while True:
 
         #If a radio transmission is received, the mode swap is confirmed
-        if radio.receive:
-            mode = val
+        if radio.receive():
 
-        #Else, the loop times out and breaks.
-        else:
-            counter += 1
+            mode = val
+            display.show(mode)
+            break
+
 
 #Event loop.
 while True:
@@ -48,18 +47,18 @@ while True:
     if pin0.read_digital():
 
         if mode == "A":
-            speech.say"I'm Happy"
+            speech.say("I'm Happy")
 
         elif mode == "B":
-            speech.say"That's funny"
+            speech.say("That's funny")
 
     if pin1.read_digital():
 
         if mode == "A":
-            speech.say"I'm sad"
+            speech.say("I'm sad")
 
         elif mode == "B":
-            speech.say"I need help"
+            speech.say("I need help")
 
 #Onboard A and Onboard B---------------------
 
