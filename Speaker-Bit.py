@@ -44,7 +44,7 @@ while True:
 #P0 PTM and P1 PTM ------------------------------
 
     #This will trigger if pin0 is pressed. (i.e, == 1)
-    if pin0.read_digital():
+    if pin0.is_touched():
 
         if mode == "A":
             speech.say("I'm Happy")
@@ -52,7 +52,7 @@ while True:
         elif mode == "B":
             speech.say("That's funny")
 
-    if pin1.read_digital():
+    if pin1.is_touched():
 
         if mode == "A":
             speech.say("I'm sad")
