@@ -35,11 +35,11 @@ def operation(phrase):
 
     #Wait for rotation to complete
     while True:
-    request = radio.receive()
-    if request:
-        if request == "Done":
-            #Exit Function
-            break
+        request = radio.receive()
+        if request:
+            if request == "Done":
+                #Exit Function
+                break
 
 
 #Event loop.
@@ -49,7 +49,7 @@ while True:
 
     #This will trigger if pin0 is pressed. (i.e, == 1)
     if pin0.is_touched():
-        operation()
+        operation("Yes")
 
     if pin1.is_touched():
         operation("No")
@@ -59,4 +59,3 @@ while True:
     if pin_logo.is_touched():
         radio.send("Stop")
         reset()
-

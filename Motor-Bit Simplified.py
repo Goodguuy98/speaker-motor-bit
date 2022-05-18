@@ -1,3 +1,4 @@
+# Write your code here :-)
 #-----------Micropython docs-------------
 #https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
 
@@ -56,6 +57,7 @@ radio.on()
 radio.config(group=1)
 
 def rotation():
+    global
     # Drive Motor 1 forward at 100% speed
     klip.motorOn(klip, "Motor1", "forward", 100)
 
@@ -88,7 +90,7 @@ while True:
     if request:
 
         if request == "Disp":
-            rotation(request)
+            rotation()
 
         elif request == "Stop":
-            reset()# Write your code here :-)
+            reset()
