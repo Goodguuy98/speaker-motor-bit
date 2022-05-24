@@ -108,9 +108,9 @@ while True:
         request("Disp")
 
         if mode == "A":
-            speak("Hello My name is Barbara", happy, Sound.HAPPY)
+            speak("Hello, my name is MicroBit.", happy, Sound.HAPPY)
         elif mode == "B":
-            speak("What did you just say to me?", angry, Sound.SLIDE)
+            speak("It is raining outside.", sad, Sound.SAD)
 
         request("Recu")
 
@@ -119,9 +119,9 @@ while True:
         request("Disp")
 
         if mode == "A":
-            speak("The project is going smoothly", wink, Sound.HELLO)
+            speak("Things are going great.", wink, Sound.HELLO)
         elif mode == "B":
-            speak("The project is going not so smoothly", sad, Sound.SAD)
+            speak("What did you just say to me?", angry, Sound.SLIDE)
 
         request("Recu")
 
