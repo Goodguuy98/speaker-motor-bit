@@ -58,7 +58,7 @@ def rotation(movement):
     klip.motorOn(klip, "Motor1", movement, 50)
 
     #Wait for x miliseconds
-    sleep(2000)
+    sleep(540)
 
     #Turn off
     klip.motorOff(klip, "Motor1")
@@ -77,4 +77,3 @@ while True:
         #Roatation for return
         if request == "Recu":
             rotation("reverse")
-
