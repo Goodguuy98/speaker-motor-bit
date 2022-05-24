@@ -84,6 +84,9 @@ def request(req):
     while True:
         if radio.receive():
             break
+        
+        if pin_logo.is_touched():
+            reset()
 
 def speak(phrase, expression, fanfare):
 
@@ -124,6 +127,9 @@ while True:
             speak("What did you just say to me?", angry, Sound.SLIDE)
 
         request("Recu")
+        
+    if pin_logo.is_touched():
+        reset()
 
 #Modes ---------------------------
 
